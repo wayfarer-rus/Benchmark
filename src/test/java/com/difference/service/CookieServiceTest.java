@@ -17,16 +17,9 @@ public class CookieServiceTest {
     @Autowired
     private CookieService cookieService;
 
-    @Autowired
-    private ChocolateService chocolateService;
-
     @Test
     public void testCookieJavaService(){
         Assert.assertTrue(cookieService.getAllCookie().size() > 0);
     }
 
-    @Test
-    public void testChocolateService(){
-        Assert.assertTrue(chocolateService.getAllChocolate().size() > 0);
-    }
 }

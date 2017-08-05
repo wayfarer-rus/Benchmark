@@ -1,7 +1,6 @@
 package com.difference.service
 
 import com.difference.model.Chocolate
-import com.difference.model.Cookie
 import com.difference.repository.ChocolateRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
