@@ -17,9 +17,19 @@ public class CookieService {
     @Autowired
     private CookieRepository cookieRepository;
 
+//    public List<Cookie> getAllCookie(){
+//        List<Cookie> cookies = new ArrayList<>();
+//        cookieRepository.findAll().forEach(cookies::add);
+//        return cookies;
+//    }
+
     public List<Cookie> getAllCookie(){
         List<Cookie> cookies = new ArrayList<>();
-        cookieRepository.findAll().forEach(cookies::add);
+        for (Cookie cookie : cookieRepository.findAll()) {
+            cookies.add(cookie);
+        }
         return cookies;
     }
+
+
 }

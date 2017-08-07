@@ -1,11 +1,14 @@
 package com.difference.service;
 
-import org.junit.Assert;
+import com.difference.model.Cookie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by aleksandrprendota on 05.08.17.
@@ -19,7 +22,41 @@ public class CookieServiceTest {
 
     @Test
     public void testCookieJavaService(){
-        Assert.assertTrue(cookieService.getAllCookie().size() > 0);
+        List<Cookie> cookies = new ArrayList<>();
+        long before = System.nanoTime();
+        for (int i = 0; i < 10000; i++){
+            cookies = cookieService.getAllCookie();
+        }
+        long after = System.nanoTime();
+        System.out.println("Метод Java работал: " + (after - before));
+        System.out.println(cookies);
+
+        /*
+        t = ns.
+
+        cold:
+        469492112
+        525681518
+        336624335
+        407565190
+        880662212
+
+        hot:
+        47147145769
+        45662786451
+        60554124036
+        56237227453
+        60357532444
+
+        hot and sout:
+        46537489878
+        50154950457
+        48055425163
+        49296392084
+        50949810447
+        44285138706
+        48185440217
+         */
     }
 
 }
