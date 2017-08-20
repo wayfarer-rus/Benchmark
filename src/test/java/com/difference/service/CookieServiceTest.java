@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,10 @@ public class CookieServiceTest {
     private CookieService cookieService;
 
     @Test
-    public void testCookieJavaService(){
+    public void testCookieJavaService() throws IOException, InterruptedException {
+        System.out.println("Test started. Press enter:");
+        Thread.sleep(10000);
+        System.out.println("Wait while calculating results.");
         List<Cookie> cookies = new ArrayList<>();
         long before = System.nanoTime();
         for (int i = 0; i < 10000; i++){
